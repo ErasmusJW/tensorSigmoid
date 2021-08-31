@@ -1,0 +1,25 @@
+{
+  "name": "adam-50-50-[sigmoid]",
+  "complete": false,
+  "inputLayer": {
+    "inputShape": 222,
+    "units": 222,
+    "activation": "sigmoid"
+  },
+  "outputLayer": {
+    "units": 1
+  },
+  "hidenLayers": [
+    {
+      "units": "50",
+      "activation": "sigmoid"
+    },
+    {
+      "units": "50",
+      "activation": "sigmoid"
+    }
+  ],
+  "optimizer": "adam",
+  "loss": "meanSquaredError",
+  "metrics": "mape"
+}
