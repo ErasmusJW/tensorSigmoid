@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow/tfjs-node-gpu": "*"
+    "@tensorflow/tfjs-node": "*"
   }
 }
