@@ -106,6 +106,7 @@ class Main{
             let modelPath =  `${__dirname}/models/${this.allModelConfig[i].name}`
             await model.fitDataset(flattenedDataset,
                 {epochs:5,
+                shuffle : true,
                 callbacks:{
                     onEpochEnd: async(epoch, logs) =>{
                         console.log("Epoch: " + epoch )
