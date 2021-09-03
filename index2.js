@@ -6,7 +6,7 @@ let flattenedDataset
 class Main{
      constructor(){
         this.columnConfigs = {}
-        this.batches = 3;
+        this.batches = 9;
 
 
 
@@ -23,6 +23,13 @@ class Main{
         for(let model of this.allModelConfig){
             let modelPath = `${__dirname}/models/${model.name}`
             const loadedModel = await tf.loadLayersModel(`file:///${modelPath}/model.json`);
+		const layerConfig = {
+		  units: parseInt(1),
+		  activation : 'relu',
+		}
+
+
+ 
             loadedModel.compile({loss: model.loss, optimizer: model.optimizer,  metrics: model.metrics});
             loadedModel.summary();
             this.loadedModels.push(loadedModel)
@@ -99,7 +106,7 @@ class Main{
         while(1){
             AllmodelCount++;
             let index = 0
-            for(var i = 3; i <  this.loadedModels.length;i++){
+            for(var i = 0; i <  this.loadedModels.length;i++){
             //for(let model of this.loadedModels){
             let model = this.loadedModels[i]
             console.log(`training model ${this.allModelConfig[i].name}`)
